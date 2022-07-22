@@ -1,0 +1,20 @@
+<!-- Esto es solo para probar, después sacalo o cambialo-->
+
+<body>
+    <h1>Postres</h1>
+    <a type="button" href="{% url 'postre-create' %}" class="btn btn-sm btn-outline-primary">Nuevo postre</a> 
+    <ul>
+        {% for postre in postres %}
+
+            <li>
+                <p> {{postre.nombre}}: ${{postre.precio}}</p>
+                <p>
+                    <a href="{% url 'postre-detail' postre.id %}"> Ver</a>
+                    <a href="{% url 'postre-update' postre.id %}"> Editar</a>
+                    <a href="{% url 'postre-delete' postre.id %}"> Borrar</a>
+                </p>
+            </li>
+        
+        {% endfor %}
+    </ul>
+</body>

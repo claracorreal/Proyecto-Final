@@ -1,0 +1,20 @@
+<!-- Esto es solo para probar, después sacalo o cambialo-->
+
+<body>
+    <h1>Platos</h1>
+    <a type="button" href="{% url 'plato-create' %}" class="btn btn-sm btn-outline-primary">Nueva plato</a> 
+    <ul>
+        {% for plato in platos %}
+
+            <li>
+                <p> {{plato.nombre}}: ${{plato.precio}}</p>
+                <p>
+                    <a href="{% url 'plato-detail' plato.id %}"> Ver</a>
+                    <a href="{% url 'plato-update' plato.id %}"> Editar</a>
+                    <a href="{% url 'plato-delete' plato.id %}"> Borrar</a>
+                </p>
+            </li>
+        
+        {% endfor %}
+    </ul>
+</body>
