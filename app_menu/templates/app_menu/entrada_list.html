@@ -1,0 +1,20 @@
+<!-- Esto es solo para probar, después sacalo o cambialo-->
+
+<body>
+    <h1>Entradas</h1>
+    <a type="button" href="{% url 'entrada-create' %}" class="btn btn-sm btn-outline-primary">Nueva entrada</a> 
+    <ul>
+        {% for entrada in entradas %}
+
+            <li>
+                <p> {{entrada.nombre}}: ${{entrada.precio}}</p>
+                <p>
+                    <a href="{% url 'entrada-detail' entrada.id %}"> Ver</a>
+                    <a href="{% url 'entrada-update' entrada.id %}"> Editar</a>
+                    <a href="{% url 'entrada-delete' entrada.id %}"> Borrar</a>
+                </p>
+            </li>
+        
+        {% endfor %}
+    </ul>
+</body>

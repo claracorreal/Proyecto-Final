@@ -1,0 +1,20 @@
+<!-- Esto es solo para probar, después sacalo o cambialo-->
+
+<body>
+    <h1>Bebidas</h1>
+    <a type="button" href="{% url 'bebida-create' %}" class="btn btn-sm btn-outline-primary">Nueva bebida</a> 
+    <ul>
+        {% for bebida in bebidas %}
+
+            <li>
+                <p> {{bebida.nombre}}: ${{bebida.precio}}</p>
+                <p>
+                    <a href="{% url 'bebida-detail' bebida.id %}"> Ver</a>
+                    <a href="{% url 'bebida-update' bebida.id %}"> Editar</a>
+                    <a href="{% url 'bebida-delete' bebida.id %}"> Borrar</a>
+                </p>
+            </li>
+        
+        {% endfor %}
+    </ul>
+</body>

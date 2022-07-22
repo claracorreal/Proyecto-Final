@@ -1,0 +1,21 @@
+<!-- Esto es solo para probar, después sacalo o cambialo-->
+
+
+
+<body>
+
+    <main class="flex-shrink-0">
+        <div class="container">
+            <a type="button" href = "{% url 'entrada-list' %}" style="margin-top: 1em;" class="btn btn-sm btn-outline-primary" >Lista</a>
+            <form method="post" enctype="multipart/form-data" style="margin-top: 1em;">{% csrf_token %}
+            {{ form.as_p }}
+            {% if request.resolver_match.url_name == "entrada-update" %}
+                <input type="submit" value="Update">
+            {% else %}
+                <input type="submit" value="Create">
+            {% endif %}    
+            </form>
+             
+        </div>  
+    </main>
+</body>

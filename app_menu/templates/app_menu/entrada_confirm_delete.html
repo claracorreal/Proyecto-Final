@@ -1,0 +1,14 @@
+<!-- Esto es solo para probar, después sacalo o cambialo-->
+
+<body>
+    <main class="flex-shrink-0">
+        <div class="container">
+            <a type="button" href = "{% url 'entrada-list' %}" style="margin-top: 1em;" class="btn btn-sm btn-outline-primary" >Lista de entradas</a>
+            <form method="post">{% csrf_token %}
+                <p>¿Está seguro que desea borrar "{{entrada.nombre}}"?</p>
+                {{ form }}
+                <input type="submit" value="Confirmar">
+            </form>
+        </div>
+    </main>
+</body>
