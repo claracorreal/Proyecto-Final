@@ -146,7 +146,7 @@ def contacto (request):
 
             persona.save()
 
-            return render ( request, "app_menu/inicio.html")
+            return render ( request, "app_menu/exito.html")
 
     else:
         
