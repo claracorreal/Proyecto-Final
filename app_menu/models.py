@@ -39,3 +39,16 @@ class Bebida(models.Model):
 
     def __str__(self):
         return f"{self.nombre}: ${self.precio}"
+
+
+
+# Hice esta clase de Contacto, para poder tener un formulario tipo Form.
+class Contacto (models.Model):
+
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    email = models.EmailField()
+    telefono = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.nombre} { self.apellido}"

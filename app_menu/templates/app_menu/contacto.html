@@ -37,4 +37,21 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
+
+<form action="" method = "POST"> 
+        
+    {% csrf_token %}
+    
+<div class="container">    
+    <table>
+
+        {{contacto.as_table}}
+
+    </table>
+</div>
+   
+    <input type ="submit", value= "Enviar">
+
+</form>
+
 {% endblock content %}

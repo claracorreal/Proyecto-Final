@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from app_menu.models import Entrada, Plato, Postre, Bebida
+from app_menu.models import Entrada, Plato, Postre, Bebida, Contacto
+from app_menu.forms import FormularioContacto
 
 
 # Cree una vista de Inicio, para que al ir al Host nos lleve ahi
@@ -126,3 +127,29 @@ class BebidaUpdate (UpdateView):
 class BebidaDelete (DeleteView):
     model = Bebida
     success_url = reverse_lazy("bebida-list")
+
+
+def contacto (request):
+
+    if request.method == "POST":
+
+        contacto = FormularioContacto(request.POST)
+
+
+        print(contacto)
+
+        if contacto.is_valid:
+
+            informacion = contacto.cleaned_data
+
+            persona = Contacto( nombre = informacion ['nombre'], apellido = informacion ['apellido'], email = informacion['email'], telefono = informacion['telefono'])
+
+            persona.save()
+
+            return render ( request, "app_menu/inicio.html")
+
+    else:
+        
+        contacto  = FormularioContacto()
+
+    return render (request, "app_menu/contacto.html", {"contacto": contacto})
