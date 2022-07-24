@@ -1,7 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title &}
+Listado de Postres
+{% endblock title &}
 <!-- Esto es solo para probar, después sacalo o cambialo-->
 
-<body>
-    <h1>Postres</h1>
+{% block title menu %}
+Lista de Postres...
+{% endblock title menu%}
+
+
+{% block title page %}          
+Te damos la Bienvenida al menú digital. En el podrás 
+ver, crear, modificar o eliminar según consideres necesario. 
+Te pedimos que sigas las instrucciones que se detallan a continuación...
+{% endblock title page %}
+
+
+{% block content %}
+<main>
+    <body>
+        <h4>Postres</h4>
     <a type="button" href="{% url 'postre-create' %}" class="btn btn-sm btn-outline-primary">Nuevo postre</a> 
     <ul>
         {% for postre in postres %}
@@ -18,3 +37,5 @@
         {% endfor %}
     </ul>
 </body>
+</main>
+{% endblock content %}
