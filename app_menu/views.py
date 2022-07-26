@@ -129,6 +129,9 @@ class BebidaDelete (DeleteView):
     success_url = reverse_lazy("bebida-list")
 
 
+
+# se creo la view contacto para el formulario web
+
 def contacto (request):
 
     if request.method == "POST":
