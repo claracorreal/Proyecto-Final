@@ -1,8 +1,12 @@
+
+from django import views
 from django.urls import path
-from app_menu.views import (EntradaList, EntradaDetail, EntradaCreate, EntradaUpdate, EntradaDelete,
+from .forms import FormularioContacto
+from .views import (EntradaList, EntradaDetail, EntradaCreate, EntradaUpdate, EntradaDelete,
                             PlatoList, PlatoDetail, PlatoCreate, PlatoUpdate, PlatoDelete,
                             PostreList, PostreDetail, PostreCreate, PostreUpdate, PostreDelete,
-                            BebidaList, BebidaDetail, BebidaCreate, BebidaUpdate, BebidaDelete,)
+                            BebidaList, BebidaDetail, BebidaCreate, BebidaUpdate, BebidaDelete,Inicio, contacto,)
+
 
 urlpatterns = [
     path('entrada/list/', EntradaList.as_view(), name='entrada-list'),
@@ -25,5 +29,7 @@ urlpatterns = [
     path('bebida/create',BebidaCreate.as_view(), name='bebida-create'),
     path('bebida/<pk>/update', BebidaUpdate.as_view(), name='bebida-update'),
     path('bebida/<pk>/delete', BebidaDelete.as_view(), name='bebida-delete'),
+    path('', Inicio, name='inicio'),
+    path('contacto/',contacto,name='contacto')
 
 ]

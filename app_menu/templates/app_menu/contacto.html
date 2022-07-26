@@ -1,11 +1,9 @@
 {% extends 'app_menu/base.html' %}
-<!-- Esto es solo para probar, después sacalo o cambialo-->
-
 
 
 <!--Bloque de la Pestaña de la Página-->
 {% block title %}
-Entrada
+Contacto...
 {% endblock title %}
 
 
@@ -13,10 +11,8 @@ Entrada
 
 <!-- Bloque del titulo del menu-->  
 {% block title_menu %}
-Confirmación Delete
+Comunicate con nosotros
 {% endblock title_menu %}
-
-
 
 
 
@@ -26,7 +22,7 @@ Confirmación Delete
 <div class="container-expand text-center">
 <div class="text-bg-danger p-4">
     <h5> 
-        Te damos la Bienvenida al menú digital.<br> En el podras
+        Te damos la Bienvenida al menú digital.<br> En el podrás
 ver, crear, modificar o eliminar según consideres necesario.<br>
 Te pedimos que sigas las instrucciones que se detallan a continuación...
         
@@ -39,19 +35,23 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
 
 
 
-
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
-    <main class="flex-shrink-0">
-        <div class="container">
-            <a type="button" href = "{% url 'entrada-list' %}" style="margin-top: 1em;" class="btn btn-sm btn-outline-primary" >Lista de entradas</a>
-            <form method="post">{% csrf_token %}
-                <p>¿Está seguro que desea borrar "{{entrada.nombre}}"?</p>
-                {{ form }}
-                <input type="submit" value="Confirmar">
-            </form>
-        </div>
-    </main>
-</body>
+
+<form action="" method = "POST"> 
+        
+    {% csrf_token %}
+    
+<div class="container">    
+    <table>
+
+        {{contacto.as_table}}
+
+    </table>
+</div>
+   
+    <input type ="submit", value= "Enviar">
+
+</form>
+
 {% endblock content %}
