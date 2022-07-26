@@ -18,7 +18,7 @@ class Plato(models.Model):
     modificacion = models.DateField()
 
     def __str__(self):
-        return f"{self.nombre: ${self.precio}}"
+        return f"{self.nombre}: ${self.precio}"
 
 class Postre(models.Model):
     nombre = models.CharField(max_length=100)
