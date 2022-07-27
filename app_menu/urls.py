@@ -30,6 +30,7 @@ urlpatterns = [
     path('bebida/<pk>/update', BebidaUpdate.as_view(), name='bebida-update'),
     path('bebida/<pk>/delete', BebidaDelete.as_view(), name='bebida-delete'),
     path('', Inicio, name='inicio'),
-    path('contacto/',contacto,name='contacto')
+    path('contacto/',contacto,name='contacto'),
+    path('login', views.login_request, name = 'Login')
 
 ]
