@@ -44,7 +44,9 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
     <p> {{postre.nombre}}</p>
     <p> {{postre.descripcion}}</p>
     <p> ${{postre.precio}}</p>
-    <p> {{postre.imagen}}</p>
+    <div style="text-align:left;">
+        <img height="225" src="{{ postre.imagen.url }}" /> 
+    </div>
     <p>
         <a href="{% url 'postre-list' %}">Regresar</a>
     </p>

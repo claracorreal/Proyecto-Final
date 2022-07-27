@@ -40,7 +40,10 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
     <p> {{bebida.nombre}}</p>
     <p> {{bebida.descripcion}}</p>
     <p> ${{bebida.precio}}</p>
-    <p> {{bebida.imagen}}</p>
+    <div style="text-align:left;">
+        <img height="225" src="{{ bebida.imagen.url }}" /> 
+    </div>
+
     <p>
         <a href="{% url 'bebida-list' %}">Regresar</a>
     </p>

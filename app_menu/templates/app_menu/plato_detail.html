@@ -44,7 +44,9 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
     <p> {{plato.nombre}}</p>
     <p> {{plato.descripcion}}</p>
     <p> ${{plato.precio}}</p>
-    <p> {{plato.imagen}}</p>
+    <div style="text-align:left;">
+        <img height="225" src="{{ plato.imagen.url }}" /> 
+    </div>
     <p>
         <a href="{% url 'plato-list' %}">Regresar</a>
     </p>
