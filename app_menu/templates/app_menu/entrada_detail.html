@@ -45,7 +45,9 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
     <p> {{entrada.nombre}}</p>
     <p> {{entrada.descripcion}}</p>
     <p> ${{entrada.precio}}</p>
-    <p> {{entrada.imagen}}</p>
+    <div style="text-align:left;">
+        <img height="225" src="{{ entrada.imagen.url }}" /> 
+    </div>
     <p>
         <a href="{% url 'entrada-list' %}">Regresar</a>
     </p>
