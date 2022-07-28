@@ -4,7 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from app_menu.models import Entrada, Plato, Postre, Bebida, Contacto
 from app_menu.forms import FormularioContacto
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 
 
@@ -160,7 +160,7 @@ def contacto (request):
     return render (request, "app_menu/contacto.html", {"contacto": contacto})
 
 
-#Se crea el Login y el Logout
+#Se crea el Login
 
 def login_request(request):
 
@@ -189,3 +189,22 @@ def login_request(request):
     form = AuthenticationForm()
 
     return render(request, "app_menu/login.html", {'form': form})
+
+#Se crea el Registro
+
+def register(request):
+
+    if request.method == "POST":
+
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+
+            username = form.cleaned_data["username"]
+            form.save()
+            return render(request, "app_menu/login.html", {"mensaje":"Usuario Creado"})
+    
+    else:
+        form = UserCreationForm()
+
+    return render(request,"app_menu/registro.html", {"form":"Usuario Creado"})   

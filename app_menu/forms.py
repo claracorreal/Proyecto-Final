@@ -5,3 +5,4 @@ class FormularioContacto ( forms.Form):
     apellido = forms.CharField(max_length=40)
     email = forms.EmailField()
     telefono = forms.IntegerField()
+
