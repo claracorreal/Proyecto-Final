@@ -5,8 +5,9 @@ from .forms import FormularioContacto
 from .views import (EntradaList, EntradaDetail, EntradaCreate, EntradaUpdate, EntradaDelete,
                             PlatoList, PlatoDetail, PlatoCreate, PlatoUpdate, PlatoDelete,
                             PostreList, PostreDetail, PostreCreate, PostreUpdate, PostreDelete,
-                            BebidaList, BebidaDetail, BebidaCreate, BebidaUpdate, BebidaDelete,Inicio, contacto,)
+                            BebidaList, BebidaDetail, BebidaCreate, BebidaUpdate, BebidaDelete,Inicio, contacto, login_request,register)
 
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('entrada/list/', EntradaList.as_view(), name='entrada-list'),
@@ -30,6 +31,9 @@ urlpatterns = [
     path('bebida/<pk>/update', BebidaUpdate.as_view(), name='bebida-update'),
     path('bebida/<pk>/delete', BebidaDelete.as_view(), name='bebida-delete'),
     path('', Inicio, name='inicio'),
-    path('contacto/',contacto,name='contacto')
+    path('contacto/',contacto,name='contacto'),
+    path('login', login_request, name = 'Login'),
+    path('register', register, name = 'Register'),
+    path('logout', LogoutView.as_view(template_name='app_menu/logout.html'), name= 'Logout')
 
 ]

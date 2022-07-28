@@ -4,6 +4,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from app_menu.models import Entrada, Plato, Postre, Bebida, Contacto
 from app_menu.forms import FormularioContacto
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth import login, logout, authenticate
 
 
 # Cree una vista de Inicio, para que al ir al Host nos lleve ahi
@@ -156,3 +158,53 @@ def contacto (request):
         contacto  = FormularioContacto()
 
     return render (request, "app_menu/contacto.html", {"contacto": contacto})
+
+
+#Se crea el Login
+
+def login_request(request):
+
+    if request.method == "POST":
+        form = AuthenticationForm(request, data = request.POST)
+
+        if form.is_valid():
+            usuario = form.cleaned_data.get('username')
+            contra = form.cleaned_data.get('password')
+
+            user = authenticate(username=usuario, password=contra)
+
+            if user is not None:
+                login(request,user)
+
+                return render(request, "app_menu/inicio.html", {"mensaje": f"Bienvenido {usuario}"})
+
+            else:
+
+                return render(request, "app_menu/inicio.html", {"mensaje": "Error, datos incorrectos"})
+
+        else:
+
+                return render(request, "app_menu/inicio.html", {"mensaje": "Error, formulario erroneo"})
+
+    form = AuthenticationForm()
+
+    return render(request, "app_menu/login.html", {'form': form})
+
+#Se crea el Registro
+
+def register(request):
+
+    if request.method == "POST":
+
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+
+            username = form.cleaned_data["username"]
+            form.save()
+            return render(request, "app_menu/login.html", {"mensaje":"Usuario Creado"})
+    
+    else:
+        form = UserCreationForm()
+
+    return render(request,"app_menu/registro.html", {"form":"Usuario Creado"})   
