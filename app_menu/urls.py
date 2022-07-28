@@ -5,7 +5,7 @@ from .forms import FormularioContacto
 from .views import (EntradaList, EntradaDetail, EntradaCreate, EntradaUpdate, EntradaDelete,
                             PlatoList, PlatoDetail, PlatoCreate, PlatoUpdate, PlatoDelete,
                             PostreList, PostreDetail, PostreCreate, PostreUpdate, PostreDelete,
-                            BebidaList, BebidaDetail, BebidaCreate, BebidaUpdate, BebidaDelete,Inicio, contacto,)
+                            BebidaList, BebidaDetail, BebidaCreate, BebidaUpdate, BebidaDelete,Inicio, contacto, login_request,)
 
 
 urlpatterns = [
@@ -31,6 +31,6 @@ urlpatterns = [
     path('bebida/<pk>/delete', BebidaDelete.as_view(), name='bebida-delete'),
     path('', Inicio, name='inicio'),
     path('contacto/',contacto,name='contacto'),
-    path('login', views.login_request, name = 'Login')
+    path('login', login_request, name = 'Login')
 
 ]
