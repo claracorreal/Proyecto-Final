@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from app_menu.models import Entrada, Plato, Postre, Bebida, Contacto
 from app_menu.forms import FormularioContacto
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth import login, logout, authenticate
-
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
+from django.contrib.messages.views import SuccessMessageMixin
 
 # Cree una vista de Inicio, para que al ir al Host nos lleve ahi
 
@@ -192,19 +194,24 @@ def login_request(request):
 
 #Se crea el Registro
 
-def register(request):
+class SignUpView(SuccessMessageMixin, CreateView):
 
-    if request.method == "POST":
+    template_name = 'app_menu/registro.html'
+    success_url = reverse_lazy('panel-page')
+    form_class = UserCreationForm
+    success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"
+  
 
-        form = UserCreationForm(request.POST)
+#Edicion de usuarios
 
-        if form.is_valid():
+class UserUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
-            username = form.cleaned_data["username"]
-            form.save()
-            return render(request, "app_menu/login.html", {"mensaje":"Usuario Creado"})
+    model = User
+    template_name = "app_menu/formulario_usuario.html"
+    fields = ["email", "nombre", "apellido"]
+
+    def get_success_url(self):
+        return reverse_lazy("user-detail", kwargs={"pk": self.request.user.id})
     
-    else:
-        form = UserCreationForm()
-
-    return render(request,"app_menu/registro.html", {"form":"Usuario Creado"})   
+    def test_func(self):
+        return self.request.user.id == int(self.kwargs['pk'])
