@@ -1,14 +1,6 @@
 {% extends 'app_menu/base.html' %}
 
 
-<!--Bloque de la Pestaña de la Página-->
-{% block title %}
-¡Gracias por contactarte!
-{% endblock title %}
-
-
-
-
 <!-- Bloque del titulo del menu-->  
 {% block title_menu %}
 Hasta la próxima....
@@ -16,24 +8,13 @@ Hasta la próxima....
 
 
 
-
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la Bienvenida al menú digital.<br> En el podrás
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
-
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<h3>¡¡Formulario enviado con éxito!!</h3>
+<div class=" text-center row mt-5">
+    <h3>¡¡Formulario enviado con éxito!!</h3>
+</div><br>
+
+<div class=" text-center mt-1">
+    <a class="btn btn-outline-danger mt-1"  href="{% url 'inicio' %}">Volver al Inicio</a>
+</div>
 {% endblock content %}

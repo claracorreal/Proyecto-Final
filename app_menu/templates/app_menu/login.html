@@ -1,23 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    
-    <form action="" method="POST">
+{% extends 'app_menu/base.html' %}
 
-        {% csrf_token %}
+{% block title %}
+Iniciar Sesion
+{% endblock title %}
 
-        {{form.as_p}}
 
-        <button type="submit"> Iniciar Sesión </button>
+{% block title_menu %}
+Inicio de Sesion
+{% endblock title_menu %}
 
-    </form>
-    
 
-</body>
-</html>
+{% block content %}  
+
+
+<div class="row mt-5">
+
+    <div class="col-sm-6 col-md-4"></div>
+
+        <div class="col-sm-6 col-md-4">
+
+        <form action="" method="POST">
+
+            {% csrf_token %}
+
+        
+            {{form.as_p}}
+
+
+
+        <input type="submit" class=" text-center btn btn-danger mt-1" value="Iniciar Sesion"><br>
+
+         
+        
+
+        </form><br><br>
+
+
+<p> ¿No tienes Cuenta? </p>
+<a class="btn btn-outline-danger mt-1"  href="{% url 'Register' %}">Registrate!</a>
+
+    </div>
+
+</div>
+{% endblock content %}

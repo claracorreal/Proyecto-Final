@@ -40,7 +40,8 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
     <main class="flex-shrink-0">
         <div class="container">
             <a type="button" href = "{% url 'bebida-list' %}" style="margin-top: 1em;" class="btn btn-sm btn-outline-primary" >Lista</a>
-            <form method="post" enctype="multipart/form-data" style="margin-top: 1em;">{% csrf_token %}
+            <form method="post" enctype="multipart/form-data" style="margin-top: 1em;">
+            {% csrf_token %}
             {{ form.as_p }}
             {% if request.resolver_match.url_name == "bebida-update" %}
                 <input type="submit" value="Update">
