@@ -18,35 +18,21 @@ Bebidas
 
 
 
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la bienvenida al menú digital.<br> En el podrás
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
+
 
     <p> {{bebida.nombre}}</p>
     <p> {{bebida.descripcion}}</p>
     <p> ${{bebida.precio}}</p>
+    
     <div style="text-align:left;">
         <img height="225" src="{{ bebida.imagen.url }}" /> 
     </div>
 
     <p>
-        <a href="{% url 'bebida-list' %}">Regresar</a>
+        <a href="{% url 'bebida-list' %}" class="btn btn-danger mt-1" >Regresar</a>
     </p>
 
-</body>
+
 {% endblock content %}

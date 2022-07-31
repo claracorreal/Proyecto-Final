@@ -1,5 +1,5 @@
 {% extends 'app_menu/base.html' %}
-<!-- Esto es solo para probar, después sacalo o cambialo-->
+
 
 
 
@@ -17,41 +17,23 @@ Lista de Entradas
 
 
 
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la Bienvenida al menú digital.<br> En el podras
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
-
-
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
-    <h1>Entradas</h1>
-    <a type="button" href="{% url 'entrada-create' %}" class="btn btn-sm btn-outline-primary">Nueva entrada</a> 
+
+    <a type="button" href="{% url 'entrada-create' %}" class="btn btn-danger mt-1" >Nueva entrada</a> 
     <ul>
         {% for entrada in entradas %}
 
             <li>
                 <p> {{entrada.nombre}}: ${{entrada.precio}}</p>
                 <p>
-                    <a href="{% url 'entrada-detail' entrada.id %}"> Ver</a>
-                    <a href="{% url 'entrada-update' entrada.id %}"> Editar</a>
-                    <a href="{% url 'entrada-delete' entrada.id %}"> Borrar</a>
+                    <a href="{% url 'entrada-detail' entrada.id %}" class="btn btn-danger mt-1" > Ver</a>
+                    <a href="{% url 'entrada-update' entrada.id %}" class="btn btn-danger mt-1" > Editar</a>
+                    <a href="{% url 'entrada-delete' entrada.id %}" class="btn btn-danger mt-1" > Borrar</a>
                 </p>
             </li>
         
         {% endfor %}
     </ul>
-</body>
+
 {% endblock content %}

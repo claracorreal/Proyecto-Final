@@ -149,7 +149,7 @@ def contacto (request):
 
             informacion = contacto.cleaned_data
 
-            persona = Contacto( nombre = informacion ['nombre'], apellido = informacion ['apellido'], email = informacion['email'], telefono = informacion['telefono'])
+            persona = Contacto( nombre = informacion ['nombre'], apellido = informacion ['apellido'],email = informacion['email'], telefono = informacion['telefono'])
 
             persona.save()
 

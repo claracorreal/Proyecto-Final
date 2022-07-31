@@ -19,41 +19,25 @@ Lista de Bebidas
 
 
 
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la Bienvenida al menú digital.<br> En el podras
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
-
-
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
-    <h1>Bebidas</h1>
-    <a type="button" href="{% url 'bebida-create' %}" class="btn btn-sm btn-outline-primary">Nueva bebida</a> 
+
+    
+    <a type="button" href="{% url 'bebida-create' %}" class="btn btn-danger mt-1" >Nueva bebida</a> 
+    
     <ul>
         {% for bebida in bebidas %}
 
             <li>
                 <p> {{bebida.nombre}}: ${{bebida.precio}}</p>
                 <p>
-                    <a href="{% url 'bebida-detail' bebida.id %}"> Ver</a>
-                    <a href="{% url 'bebida-update' bebida.id %}"> Editar</a>
-                    <a href="{% url 'bebida-delete' bebida.id %}"> Borrar</a>
+                    <a href="{% url 'bebida-detail' bebida.id %}" class="btn btn-danger mt-1" > Ver</a>
+                    <a href="{% url 'bebida-update' bebida.id %}" class="btn btn-danger mt-1" > Editar</a>
+                    <a href="{% url 'bebida-delete' bebida.id %}" class="btn btn-danger mt-1" > Borrar</a>
                 </p>
             </li>
         
         {% endfor %}
     </ul>
-</body>
+
 {% endblock content %}

@@ -16,43 +16,36 @@ Comunicate con nosotros
 
 
 
-
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la Bienvenida al menú digital.<br> En el podrás
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
-
-
-
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
-<form action="" method = "POST"> 
+
+<div class=" text-muted text-center row mt-5">
+
+    <div class="col-sm-6 col-md-4"></div>
         
-    {% csrf_token %}
+        <div class="col-sm-5 col-md-4">
+
+            <form action="" method = "POST"> 
+
+
+        
+                {% csrf_token %}
     
-<div class="container-expand text-center">    
-    <table>
 
-        {{contacto.as_table}}
 
-    </table>
-</div>
+                {{contacto.as_p}}
+
+
+
    
-    <input type ="submit", value= "Enviar">
+                <input type="submit" class=" text-center btn btn-danger mt-1" value="Enviar"><br>
+
     
 
-</form>
+            </form>
+
+        </div>
+</div>
 
 {% endblock content %}

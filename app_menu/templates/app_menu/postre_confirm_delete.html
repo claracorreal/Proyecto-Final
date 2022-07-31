@@ -20,35 +20,21 @@ Confirmación Delete
 
 
 
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la Bienvenida al menú digital.<br> En el podras
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
 
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
-    <main class="flex-shrink-0">
+
+
         <div class="container">
-            <a type="button" href = "{% url 'postre-list' %}" style="margin-top: 1em;" class="btn btn-sm btn-outline-primary" >Lista de postres</a>
-            <form method="post">{% csrf_token %}
+            <a type="button" href = "{% url 'postre-list' %}" class="btn btn-danger mt-1" >Lista de postres</a>
+            <form method="post">
+                {% csrf_token %}
                 <p>¿Está seguro que desea borrar "{{postre.nombre}}"?</p>
                 {{ form }}
                 <input type="submit" value="Confirmar">
             </form>
         </div>
-    </main>
-</body>
+
+
 {% endblock content %}

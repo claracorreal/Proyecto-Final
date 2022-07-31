@@ -21,25 +21,9 @@ Detalle de Postres
 
 
 
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la Bienvenida al menú digital.<br> En el podras
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
-
 
 {% block content %}
-<body>
+
 
     <p> {{postre.nombre}}</p>
     <p> {{postre.descripcion}}</p>
@@ -48,8 +32,8 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
         <img height="225" src="{{ postre.imagen.url }}" /> 
     </div>
     <p>
-        <a href="{% url 'postre-list' %}">Regresar</a>
+        <a href="{% url 'postre-list' %}" class="btn btn-danger mt-1" >Regresar</a>
     </p>
 
-</body>
+
 {% endblock content %}

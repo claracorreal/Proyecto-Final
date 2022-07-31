@@ -17,41 +17,21 @@ Menú Principal
 
 
 
-
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la bienvenida al menú digital.<br> En el podrás
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
 {% block content %}
-<main>
-    <body>
-        <h4>Postres</h4>
-    <a type="button" href="{% url 'postre-create' %}" class="btn btn-sm btn-outline-primary">Nuevo postre</a> 
+
+    <a type="button" href="{% url 'postre-create' %}" class="btn btn-danger mt-1" >Nuevo postre</a> 
     <ul>
         {% for postre in postres %}
 
             <li>
                 <p> {{postre.nombre}}: ${{postre.precio}}</p>
                 <p>
-                    <a href="{% url 'postre-detail' postre.id %}"> Ver</a>
-                    <a href="{% url 'postre-update' postre.id %}"> Editar</a>
-                    <a href="{% url 'postre-delete' postre.id %}"> Borrar</a>
+                    <a href="{% url 'postre-detail' postre.id %}" class="btn btn-danger mt-1" > Ver</a>
+                    <a href="{% url 'postre-update' postre.id %}" class="btn btn-danger mt-1" > Editar</a>
+                    <a href="{% url 'postre-delete' postre.id %}" class="btn btn-danger mt-1" > Borrar</a>
                 </p>
             </li>
         
         {% endfor %}
     </ul>
-</body>
-</main>
 {% endblock content %}
