@@ -22,16 +22,19 @@ Lista de Platos
 {% block content %}
 
 
-    <a type="button" href="{% url 'plato-create' %}" class="btn btn-sm btn-outline-primary">Nuevo plato</a> 
+
+    <a type="button" href="{% url 'plato-create' %}" class="btn btn-danger mt-1" >Nuevo plato</a> 
+
+
     <ul>
         {% for plato in platos %}
 
             <li>
                 <p> {{plato.nombre}}: ${{plato.precio}}</p>
                 <p>
-                    <a href="{% url 'plato-detail' plato.id %}"> Ver</a>
-                    <a href="{% url 'plato-update' plato.id %}"> Editar</a>
-                    <a href="{% url 'plato-delete' plato.id %}"> Borrar</a>
+                    <a href="{% url 'plato-detail' plato.id %}" class="btn btn-danger mt-1"> Ver</a>
+                    <a href="{% url 'plato-update' plato.id %}" class="btn btn-danger mt-1"> Editar</a>
+                    <a href="{% url 'plato-delete' plato.id %}" class="btn btn-danger mt-1"> Borrar</a>
                 </p>
             </li>
         

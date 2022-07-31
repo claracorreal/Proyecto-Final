@@ -27,8 +27,9 @@ Confirmación Delete
 
 
         <div class="container">
-            <a type="button" href = "{% url 'postre-list' %}" style="margin-top: 1em;" class="btn btn-sm btn-outline-primary" >Lista de postres</a>
-            <form method="post">{% csrf_token %}
+            <a type="button" href = "{% url 'postre-list' %}" class="btn btn-danger mt-1" >Lista de postres</a>
+            <form method="post">
+                {% csrf_token %}
                 <p>¿Está seguro que desea borrar "{{postre.nombre}}"?</p>
                 {{ form }}
                 <input type="submit" value="Confirmar">

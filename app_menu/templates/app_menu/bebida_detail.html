@@ -25,12 +25,13 @@ Bebidas
     <p> {{bebida.nombre}}</p>
     <p> {{bebida.descripcion}}</p>
     <p> ${{bebida.precio}}</p>
+    
     <div style="text-align:left;">
         <img height="225" src="{{ bebida.imagen.url }}" /> 
     </div>
 
     <p>
-        <a href="{% url 'bebida-list' %}">Regresar</a>
+        <a href="{% url 'bebida-list' %}" class="btn btn-danger mt-1" >Regresar</a>
     </p>
 
 

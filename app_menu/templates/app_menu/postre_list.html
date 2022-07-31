@@ -19,16 +19,16 @@ Menú Principal
 
 {% block content %}
 
-    <a type="button" href="{% url 'postre-create' %}" class="btn btn-sm btn-outline-primary">Nuevo postre</a> 
+    <a type="button" href="{% url 'postre-create' %}" class="btn btn-danger mt-1" >Nuevo postre</a> 
     <ul>
         {% for postre in postres %}
 
             <li>
                 <p> {{postre.nombre}}: ${{postre.precio}}</p>
                 <p>
-                    <a href="{% url 'postre-detail' postre.id %}"> Ver</a>
-                    <a href="{% url 'postre-update' postre.id %}"> Editar</a>
-                    <a href="{% url 'postre-delete' postre.id %}"> Borrar</a>
+                    <a href="{% url 'postre-detail' postre.id %}" class="btn btn-danger mt-1" > Ver</a>
+                    <a href="{% url 'postre-update' postre.id %}" class="btn btn-danger mt-1" > Editar</a>
+                    <a href="{% url 'postre-delete' postre.id %}" class="btn btn-danger mt-1" > Borrar</a>
                 </p>
             </li>
         

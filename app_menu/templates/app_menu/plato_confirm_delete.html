@@ -18,11 +18,12 @@ Confirmación Delete
 {% block content %}
 
         <div class="container">
-            <a type="button" href = "{% url 'plato-list' %}" style="margin-top: 1em;" class="btn btn-sm btn-outline-primary" >Lista de platos</a>
-            <form method="post">{% csrf_token %}
+            <a type="button" href = "{% url 'plato-list' %}" class="btn btn-danger mt-1" >Lista de platos</a>
+            <form method="post">
+                {% csrf_token %}
                 <p>¿Está seguro que desea borrar "{{plato.nombre}}"?</p>
                 {{ form }}
-                <input type="submit" value="Confirmar">
+                <input type="submit"class="btn btn-danger mt-1"  value="Confirmar">
             </form>
         </div>
 
