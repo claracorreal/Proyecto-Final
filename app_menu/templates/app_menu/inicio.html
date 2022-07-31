@@ -19,11 +19,6 @@ Menú Principal
 
 
 
-
-
-
-
-
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
@@ -33,15 +28,17 @@ Menú Principal
         
         <div class="col-sm-6 col-md-3">
 
+
+
 <p> Para poder realizar cambios en esta pagina web, debes Iniciar Sesión:</p>
 
-<a class="btn btn-outline-danger mt-1"  href="{% url 'Login' %}">Iniciar Sesión</a><br><br>
+<a class="btn btn-danger mt-1"  href="{% url 'Login' %}">Iniciar Sesión</a><br><br>
 
 <p> ¿No tienes Cuenta? </p>
-<a class="btn btn-outline-danger mt-1"  href="{% url 'Register' %}">Registrate!</a>
+<a class="btn btn-danger mt-1"  href="{% url 'Register' %}">Registrate!</a>
 
 
-    </div>
+        </div>
         
 </div>   
 

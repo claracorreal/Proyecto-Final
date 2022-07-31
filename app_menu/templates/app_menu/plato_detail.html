@@ -19,27 +19,8 @@ Detalle de Platos
 
 
 
-
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la Bienvenida al menú digital.<br> En el podras
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
-
-
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
 
     <p> {{plato.nombre}}</p>
     <p> {{plato.descripcion}}</p>
@@ -50,6 +31,4 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
     <p>
         <a href="{% url 'plato-list' %}">Regresar</a>
     </p>
-
-</body>
 {% endblock content %}

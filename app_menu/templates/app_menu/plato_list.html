@@ -17,27 +17,11 @@ Lista de Platos
 
 
 
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la bienvenida al menú digital.<br> En el podrás
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
-
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
-    <h1>Platos</h1>
+
+
     <a type="button" href="{% url 'plato-create' %}" class="btn btn-sm btn-outline-primary">Nuevo plato</a> 
     <ul>
         {% for plato in platos %}
@@ -53,5 +37,4 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
         
         {% endfor %}
     </ul>
-</body>
 {% endblock content %}

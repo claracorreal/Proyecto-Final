@@ -17,26 +17,8 @@ Menú Principal
 
 
 
-
-<!-- Bloque del titulo de la página-->  
-{% block title_page %}   
-<div class="container-expand text-center">
-<div class="text-bg-danger p-4">
-    <h5> 
-        Te damos la bienvenida al menú digital.<br> En el podrás
-ver, crear, modificar o eliminar según consideres necesario.<br>
-Te pedimos que sigas las instrucciones que se detallan a continuación...
-        
-   </h5>
-</div>
-</div>
-{% endblock title_page %}
-
-
 {% block content %}
-<main>
-    <body>
-        <h4>Postres</h4>
+
     <a type="button" href="{% url 'postre-create' %}" class="btn btn-sm btn-outline-primary">Nuevo postre</a> 
     <ul>
         {% for postre in postres %}
@@ -52,6 +34,4 @@ Te pedimos que sigas las instrucciones que se detallan a continuación...
         
         {% endfor %}
     </ul>
-</body>
-</main>
 {% endblock content %}
