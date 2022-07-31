@@ -18,7 +18,7 @@ Detalle de Entradas
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
+
 
     <p> {{entrada.nombre}}</p>
     <p> {{entrada.descripcion}}</p>
@@ -30,5 +30,5 @@ Detalle de Entradas
         <a href="{% url 'entrada-list' %}">Regresar</a>
     </p>
 
-</body>
+
 {% endblock content %}

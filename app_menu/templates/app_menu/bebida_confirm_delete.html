@@ -19,8 +19,8 @@ Confirmación Delete
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
-    <main class="flex-shrink-0">
+
+
         <div class="container">
             <a type="button" href = "{% url 'bebida-list' %}" style="margin-top: 1em;" class="btn btn-sm btn-outline-primary" >Lista de bebidas</a>
             <form method="post">{% csrf_token %}
@@ -29,6 +29,6 @@ Confirmación Delete
                 <input type="submit" value="Confirmar">
             </form>
         </div>
-    </main>
-</body>
+
+
 {% endblock content %}

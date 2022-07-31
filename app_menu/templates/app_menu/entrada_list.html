@@ -19,8 +19,7 @@ Lista de Entradas
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
-    <h1>Entradas</h1>
+
     <a type="button" href="{% url 'entrada-create' %}" class="btn btn-sm btn-outline-primary">Nueva entrada</a> 
     <ul>
         {% for entrada in entradas %}
@@ -36,5 +35,5 @@ Lista de Entradas
         
         {% endfor %}
     </ul>
-</body>
+
 {% endblock content %}

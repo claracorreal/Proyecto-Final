@@ -20,7 +20,7 @@ Bebidas
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
+
 
     <p> {{bebida.nombre}}</p>
     <p> {{bebida.descripcion}}</p>
@@ -33,5 +33,5 @@ Bebidas
         <a href="{% url 'bebida-list' %}">Regresar</a>
     </p>
 
-</body>
+
 {% endblock content %}

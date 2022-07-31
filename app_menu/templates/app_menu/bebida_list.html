@@ -21,9 +21,9 @@ Lista de Bebidas
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
-    <h1>Bebidas</h1>
-    <a type="button" href="{% url 'bebida-create' %}" class="btn btn-sm btn-outline-primary">Nueva bebida</a> 
+
+    
+    <a type="button" href="{% url 'bebida-create' %}" class="btn btn-danger mt-1" >Nueva bebida</a> 
     <ul>
         {% for bebida in bebidas %}
 
@@ -38,5 +38,5 @@ Lista de Bebidas
         
         {% endfor %}
     </ul>
-</body>
+
 {% endblock content %}

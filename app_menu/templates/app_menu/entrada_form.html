@@ -19,9 +19,7 @@ Entradas
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
 
-    <main class="flex-shrink-0">
         <div class="container">
             <a type="button" href = "{% url 'entrada-list' %}" style="margin-top: 1em;" class="btn btn-sm btn-outline-primary" >Lista</a>
             <form method="post" enctype="multipart/form-data" style="margin-top: 1em;">{% csrf_token %}
@@ -34,6 +32,5 @@ Entradas
             </form>
              
         </div>  
-    </main>
-</body>
+
 {% endblock content %}

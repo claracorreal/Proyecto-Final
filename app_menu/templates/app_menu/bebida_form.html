@@ -18,11 +18,11 @@ Bebidas
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
-<body>
 
-    <main class="flex-shrink-0">
+
+    
         <div class="container">
-            <a type="button" href = "{% url 'bebida-list' %}" style="margin-top: 1em;" class="btn btn-sm btn-outline-primary" >Lista</a>
+            <a type="button" href = "{% url 'bebida-list' %}" style="margin-top: 1em;" class="btn btn-danger mt-1"  >Lista</a>
             <form method="post" enctype="multipart/form-data" style="margin-top: 1em;">
             {% csrf_token %}
             {{ form.as_p }}
@@ -34,6 +34,6 @@ Bebidas
             </form>
              
         </div>  
-    </main>
-</body>
+
+
 {% endblock content %}
