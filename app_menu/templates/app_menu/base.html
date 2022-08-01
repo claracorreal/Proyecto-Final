@@ -41,12 +41,16 @@
 
                         <div class="collapse navbar-collapse">
                             <ul class="navbar-nav  me-auto mb-0 mb-lg-0">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+                                </li>
                                 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">About</a>
+                                    <a class="nav-link" href="{% url 'about' %}">About</a>
                                 </li>
                             </ul>
                         </div>
@@ -71,18 +75,29 @@
         text-decoration: solid;
         }
 
+    main{
+        width: 100%;
+        align-items: center;
+        color: rgb(247, 244, 244);
+        background:linear-gradient(to right,rgb(0 0 0/.60),rgb(0 0 0/ .60)) ,url("/media/fondo.jpg");
+        background-size: cover;
+        background-position: center;
+        text-decoration: solid;
+    }
+
 </style>
 
 
 
 <body>
+
 <!--Bloque de Contenido de la página-->
+
+{% block content %}
 <main>
     
-    {% block content %}
-    {% endblock content %}
-    
 </main>
+{% endblock content %}
 
 
 
@@ -105,8 +120,12 @@
         
 <!-- Link's del pie de página-->
       <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="{% url 'inicio' %}" class="nav-link px-2 text-muted">Inicio</a></li>
         <li class="nav-item"><a href="{% url 'contacto' %}" class="nav-link px-2 text-muted">Contacto</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link px-2 text-muted">About</a></li>
+        
+        
+      
       </ul>
     </footer>
 </div>

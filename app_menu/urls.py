@@ -6,7 +6,7 @@ from .views import (EntradaList, EntradaDetail, EntradaCreate, EntradaUpdate, En
                             PlatoList, PlatoDetail, PlatoCreate, PlatoUpdate, PlatoDelete,
                             PostreList, PostreDetail, PostreCreate, PostreUpdate, PostreDelete,
                             BebidaList, BebidaDetail, BebidaCreate, BebidaUpdate, BebidaDelete,
-                            Inicio, contacto, login_request,SignUpView, UserUpdate)
+                            Inicio, About,contacto, login_request,SignUpView, UserUpdate)
 
 from django.contrib.auth.views import LogoutView
 
@@ -32,6 +32,7 @@ urlpatterns = [
     path('bebida/<pk>/update', BebidaUpdate.as_view(), name='bebida-update'),
     path('bebida/<pk>/delete', BebidaDelete.as_view(), name='bebida-delete'),
     path('', Inicio, name='inicio'),
+    path('about',About, name='about'),
     path('contacto/',contacto,name='contacto'),
     path('login', login_request, name = 'Login'),
     path("registro/", SignUpView.as_view(), name="registro"),
