@@ -1,0 +1,15 @@
+{% extends 'app_menu/base.html' %}
+
+{% block content %}
+
+{{mensaje}}
+
+<a class="btn btn-danger mt-1"  href="{% url 'bebida-list' %}">Bebidas</a>
+
+<a class="btn btn-danger mt-1"  href="{% url 'entrada-list' %}">Entradas</a>
+
+<a class="btn btn-danger mt-1"  href="{% url 'plato-list' %}">Platos</a>
+
+<a class="btn btn-danger mt-1"  href="{% url 'postre-list' %}">Postres</a>
+
+{% endblock content %}

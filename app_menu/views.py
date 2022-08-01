@@ -181,15 +181,15 @@ def login_request(request):
             if user is not None:
                 login(request,user)
 
-                return render(request, "app_menu/inicio.html", {"mensaje": f"Bienvenido {usuario}"})
+                return render(request, "app_menu/home.html", {"mensaje": f"Bienvenido {usuario}"})
 
             else:
 
-                return render(request, "app_menu/inicio.html", {"mensaje": "Error, datos incorrectos"})
+                return render(request, "app_menu/inicio.html", {"mensaje": "Error, datos incorrectos. Vuelva a intentarlo"})
 
         else:
 
-                return render(request, "app_menu/inicio.html", {"mensaje": "Error, formulario erroneo"})
+                return render(request, "app_menu/inicio.html", {"mensaje": "Error, formulario erroneo. Vuelva a intentarlo"})
 
     form = AuthenticationForm()
 
