@@ -1,0 +1,41 @@
+{% extends 'app_menu/base.html' %}
+
+{% block title %}
+Sobre Nosotros...
+{% endblock title %}
+
+
+{% block title_menu %}
+Gracias por visitar nuestra web
+{% endblock title_menu %}
+
+{% block content %}
+<style>
+
+    p{
+        color: white;
+      
+      
+    }
+
+</style>
+
+
+<div class="row mt-5">
+
+    <div class="col-sm-6 col-md-4"></div>   
+        
+        <div class="col-sm-6 col-md-3">
+
+
+
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam laborum, commodi qui sit officia, quibusdam id alias ullam magnam odio unde doloremque. Assumenda, tempora? Tenetur placeat quos blanditiis amet deleniti.</p>
+
+<a class="btn btn-danger mt-1"  href="{% url 'inicio' %}">Volver al Inicio</a>
+
+        </div>
+
+</div> 
+
+
+{% endblock content %}

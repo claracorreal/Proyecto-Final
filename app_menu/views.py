@@ -15,6 +15,9 @@ from django.contrib.messages.views import SuccessMessageMixin
 def Inicio ( request ):
     return render ( request, 'app_menu/inicio.html')
 
+def About ( request ):
+    return render ( request, 'app_menu/about.html')
+
 
 class EntradaList(ListView):
     queryset = Entrada.objects.all()

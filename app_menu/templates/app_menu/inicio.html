@@ -22,7 +22,7 @@ Menú Principal
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
-<div class="row mt-5">
+<div class="row mt-2">
 
     <div class="col-sm-6 col-md-4"></div>
         
@@ -30,12 +30,14 @@ Menú Principal
 
 
 
-<p> Para poder realizar cambios en esta pagina web, debes Iniciar Sesión:</p>
+<h5> Bienvenid@, esta página se hizo con el fin de poder
+mostrar de una manera funcional como puede realizarse un "CRUD".<br>
+Para poder realizar cambios en esta pagina web, debes Iniciar Sesión:</h5><br>
 
 <a class="btn btn-danger mt-1"  href="{% url 'Login' %}">Iniciar Sesión</a><br><br>
 
-<p> ¿No tienes Cuenta? </p>
-<a class="btn btn-danger mt-1"  href="{% url 'Register' %}">Registrate!</a>
+<p> ¿No tienes Cuenta? </p><br>
+<a class="btn btn-danger mt-1"  href="{% url 'registro' %}">Registrate!</a>
 
 
         </div>
