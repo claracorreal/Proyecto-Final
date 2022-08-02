@@ -1,0 +1,40 @@
+{% extends 'app_menu/base.html' %}
+<!-- Esto es solo para probar, después sacalo o cambialo-->
+
+
+
+<!--Bloque de la Pestaña de la Página-->
+{% block title %}
+Bebidas
+{% endblock title %}
+
+
+
+
+<!-- Bloque del titulo del menu-->  
+{% block title_menu %}
+Lista de Bebidas
+{% endblock title_menu %}
+
+
+
+
+<!--Bloque de Contenido de la página-->
+{% block content %}
+
+    
+    <a type="button" href="{% url 'inicio' %}" class="btn btn-danger mt-1" >Volver al inicio</a> 
+    
+    <ul>
+        {% for bebida in bebidas %}
+
+            <li>
+                <p> {{bebida.nombre}}: ${{bebida.precio}}</p> 
+                <a href="{% url 'bebida-detail' bebida.id %}" class="btn btn-danger mt-1" > Ver</a>
+                
+            </li>
+        
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

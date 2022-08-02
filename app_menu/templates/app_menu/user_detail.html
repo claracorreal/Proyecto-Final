@@ -1,0 +1,15 @@
+{% extends 'app_menu/base.html' %}
+
+{% block content %}
+<a href="{% url 'edicion-menu' %}">Regresar a la edición de menu</a>
+<a href="{% url 'user-update' user.id %}">Editar Perfil</a>
+
+<ul>
+    <li>Nombre: {{object.first_name}}</li>
+    <li>Apellido: {{object.last_name}}</li>
+    <li>email: {{object.email}} </li>
+    <li>Nombre de Usuario: {{object.username}}</li>
+</ul>
+
+
+{% endblock content %}

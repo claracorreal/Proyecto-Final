@@ -22,8 +22,8 @@ Lista de Platos
 {% block content %}
 
 
-    <a type="button" href="{% url 'edicion-menu' %}" class="btn btn-danger mt-1" >Volver a Menu</a> 
-    <a type="button" href="{% url 'plato-create' %}" class="btn btn-danger mt-1" >Nuevo plato</a> 
+
+    <a type="button" href="{% url 'inicio' %}" class="btn btn-danger mt-1" >Volver al inicio</a> 
 
 
     <ul>
@@ -31,10 +31,7 @@ Lista de Platos
 
             <li>
                 <p> {{plato.nombre}}: ${{plato.precio}}</p>
-                <p>
-                    <a href="{% url 'plato-update' plato.id %}" class="btn btn-danger mt-1"> Editar</a>
-                    <a href="{% url 'plato-delete' plato.id %}" class="btn btn-danger mt-1"> Borrar</a>
-                </p>
+                    <a href="{% url 'plato-detail' plato.id %}" class="btn btn-danger mt-1"> Ver</a>
             </li>
         
         {% endfor %}

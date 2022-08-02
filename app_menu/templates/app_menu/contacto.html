@@ -19,6 +19,8 @@ Comunicate con nosotros
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
+<br>
+<h5> Si tenés alguna consulta o queres realizar una reserva envianos tus datos que nos contactamos con vos!</h3>
 
 <style>
 
@@ -37,21 +39,11 @@ Comunicate con nosotros
         <div class="col-sm-6 col-md-5">
 
             <form method = "POST" enctype="multipart/form-data"> 
-
-
-        
                 {% csrf_token %}
-    
-
 
                 {{contacto.as_p}}
 
-
-
-   
                 <input type="submit" class="btn btn-danger mt-1" value="Enviar"><br>
-
-    
 
             </form>
 

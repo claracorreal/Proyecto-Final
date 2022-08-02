@@ -20,17 +20,13 @@ Lista de Entradas
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
-    <a type="button" href="{% url 'edicion-menu' %}" class="btn btn-danger mt-1" >Volver a Menu</a> 
-    <a type="button" href="{% url 'entrada-create' %}" class="btn btn-danger mt-1" >Nueva entrada</a> 
+    <a type="button" href="{% url 'inicio' %}" class="btn btn-danger mt-1" >Volver al inicio</a> 
     <ul>
         {% for entrada in entradas %}
 
             <li>
                 <p> {{entrada.nombre}}: ${{entrada.precio}}</p>
-                <p>
-                    <a href="{% url 'entrada-update' entrada.id %}" class="btn btn-danger mt-1" > Editar</a>
-                    <a href="{% url 'entrada-delete' entrada.id %}" class="btn btn-danger mt-1" > Borrar</a>
-                </p>
+                    <a href="{% url 'entrada-detail' entrada.id %}" class="btn btn-danger mt-1" > Ver</a>
             </li>
         
         {% endfor %}

@@ -22,6 +22,7 @@ Lista de Bebidas
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
+    <a type="button" href="{% url 'edicion-menu' %}" class="btn btn-danger mt-1" >Volver a Menu</a> 
     
     <a type="button" href="{% url 'bebida-create' %}" class="btn btn-danger mt-1" >Nueva bebida</a> 
     
@@ -31,7 +32,6 @@ Lista de Bebidas
             <li>
                 <p> {{bebida.nombre}}: ${{bebida.precio}}</p>
                 <p>
-                    <a href="{% url 'bebida-detail' bebida.id %}" class="btn btn-danger mt-1" > Ver</a>
                     <a href="{% url 'bebida-update' bebida.id %}" class="btn btn-danger mt-1" > Editar</a>
                     <a href="{% url 'bebida-delete' bebida.id %}" class="btn btn-danger mt-1" > Borrar</a>
                 </p>

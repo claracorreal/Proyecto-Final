@@ -28,19 +28,21 @@ Menú Principal
         
         <div class="col-sm-6 col-md-3">
 
+        <h3> Bienvenid@ </h3><br>
 
+        <a class="btn btn-danger mt-1"  href="{% url 'bebida-inicio' %}">Bebidas</a><br>
+        <a class="btn btn-danger mt-1"  href="{% url 'entrada-inicio' %}">Entradas</a><br>
+        <a class="btn btn-danger mt-1"  href="{% url 'plato-inicio' %}">Platos</a><br>
+        <a class="btn btn-danger mt-1"  href="{% url 'postre-inicio' %}">Postres</a><br>
 
-<h5> Bienvenid@, esta página se hizo con el fin de poder
-mostrar de una manera funcional como puede realizarse un "CRUD".<br>
-Para poder realizar cambios en esta pagina web, debes Iniciar Sesión:</h5><br>
+        <br><br><br><br>
 
-<p style="color:red"> {{mensaje}} </p>
+        <p>Empleados:</p>
+        <p style="color:red"> {{mensaje}} </p>
+        <a class="btn btn-danger mt-1"  href="{% url 'menu-login' %}">Iniciar Sesión</a><br><br>
 
-<a class="btn btn-danger mt-1"  href="{% url 'Login' %}">Iniciar Sesión</a><br><br>
-
-<p> ¿No tienes Cuenta? </p><br>
-<a class="btn btn-danger mt-1"  href="{% url 'registro' %}">Registrate!</a>
-
+        <p> ¿No tienes Cuenta? </p>
+        <a class="btn btn-danger mt-1"  href="{% url 'menu-registro' %}">Registrate!</a>
 
         </div>
         
