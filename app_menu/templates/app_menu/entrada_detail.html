@@ -19,6 +19,11 @@ Detalle de Entradas
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
+<div class="row mt-3">
+
+    <div class="col-sm-6 col-md-5"></div>
+
+        <div class="col-sm-6 col-md-2">
 
     <p> {{entrada.nombre}}</p>
     <p> {{entrada.descripcion}}</p>
@@ -30,5 +35,7 @@ Detalle de Entradas
         <a href="{% url 'entrada-inicio' %}" class="btn btn-danger mt-1" >Regresar</a>
     </p>
 
-
+        </div>
+        
+</div>
 {% endblock content %}

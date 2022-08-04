@@ -19,8 +19,8 @@ Comunicate con nosotros
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
-<br>
-<h5> Si tenés alguna consulta o queres realizar una reserva envianos tus datos que nos contactamos con vos!</h3>
+
+
 
 <style>
 
@@ -29,16 +29,21 @@ Comunicate con nosotros
       
         border-color: black;
     }
+
+
 </style>
 
 
 <div class="row mt-5">
 
-    <div class="col-sm-6 col-md-5"></div>
+    <div class="col-sm-6 col-md-4"></div>
         
-        <div class="col-sm-6 col-md-5">
+        <div class="col-sm-6 col-md-4">
 
-            <form method = "POST" enctype="multipart/form-data"> 
+            <h5> Si tenés alguna consulta o queres realizar una reserva envianos tus datos que nos contactamos con vos!</h5><br>
+
+            <form action="" method = "POST" > 
+
                 {% csrf_token %}
 
                 {{contacto.as_p}}

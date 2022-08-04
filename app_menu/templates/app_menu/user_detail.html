@@ -1,8 +1,15 @@
 {% extends 'app_menu/base.html' %}
 
 {% block content %}
-<a href="{% url 'edicion-menu' %}">Regresar a la edición de menu</a>
-<a href="{% url 'user-update' user.id %}">Editar Perfil</a>
+
+<div class="row mt-5">
+
+    <div class="col-sm-6 col-md-4"></div>
+        
+        <div class="col-sm-6 col-md-3">
+
+<a href="{% url 'edicion-menu' %}"class="btn btn-danger mt-1">Regresar a la edición de menu</a>
+<a href="{% url 'user-update' user.id %}"class="btn btn-danger mt-1">Editar Perfil</a>
 
 <ul>
     <li>Nombre: {{object.first_name}}</li>
@@ -10,6 +17,11 @@
     <li>email: {{object.email}} </li>
     <li>Nombre de Usuario: {{object.username}}</li>
 </ul>
+
+        
+    </div>
+        
+</div>
 
 
 {% endblock content %}

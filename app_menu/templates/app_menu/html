@@ -1,13 +1,3 @@
-{% extends 'app_menu/base.html' %}
-
-{% block title %}
-Menu de Edición
-{% endblock title %}
-
-{% block title_menu %}
-Edición...
-{% endblock title_menu %}
-
 {% block content %}
 
 <style>
@@ -35,12 +25,16 @@ div.galeria{
 {{mensaje}}
 <div class="row mt-5">
 
+    <div class="col-sm-6 col-md-5"></div>
+        
+        <div class="col-sm-6 col-md-3">
 
-<a type="button" href="{% url 'menu-logout' %}" class="btn btn-sm btn-outline-danger mt-1">Log out</a> 
+<a type="button" href="{% url 'menu-logout' %}" class="btn btn-sm btn-outline-danger">Log out</a> 
 <a type="button" href="{% url 'user-detail' user.id %}" class="btn btn-sm btn-outline-success">Editar perfil</a><br>
 
+        </div>
 
-
+</div>
  
 
 
@@ -86,4 +80,46 @@ div.galeria{
 
 
  
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block content %}
+<div class="row mt-5">
+
+    <div class="col-sm-6 col-md-5"></div>
+        
+        <div class="col-sm-6 col-md-3">
+
+{{mensaje}}
+<a type="button" href="{% url 'menu-logout' %}" class="btn btn-sm btn-outline-danger">Log out</a> 
+<a type="button" href="{% url 'user-detail' user.id %}" class="btn btn-sm btn-outline-success">Editar perfil</a><br>
+
+<a class="btn btn-danger mt-1"  href="{% url 'bebida-list' %}">Bebidas</a> <br>
+<a class="btn btn-danger mt-1"  href="{% url 'entrada-list' %}">Entradas</a> <br>
+<a class="btn btn-danger mt-1"  href="{% url 'plato-list' %}">Platos</a><br>
+<a class="btn btn-danger mt-1"  href="{% url 'postre-list' %}">Postres</a><br>
+
+
+
+
+        </div>
+
+</div>
+
 {% endblock content %}
