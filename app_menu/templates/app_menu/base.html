@@ -39,6 +39,7 @@
             </div>
                         <!-- Barra derecha de Navegación-->
 
+                        {% block nav %}
                         <div class="collapse navbar-collapse">
                             <ul class="navbar-nav  me-auto mb-0 mb-lg-0">
 
@@ -54,6 +55,7 @@
                                 </li>
                             </ul>
                         </div>
+                        {% endblock nav %}
                     </nav>
                 </header>
 
@@ -63,29 +65,29 @@
     {% block title_page %}          
     {% endblock title_page %}
 
-<style>
+    <style>
 
-    body{
-        width: 100%;
-        align-items: center;
-        color: rgb(247, 244, 244);
-        background:linear-gradient(to right,rgb(0 0 0/.60),rgb(0 0 0/ .60)) ,url("/media/fondo.jpg");
-        background-size: cover;
-        background-position: center;
-        text-decoration: solid;
+        body{
+            width: 100%;
+            align-items: center;
+            color: rgb(247, 244, 244);
+            background:linear-gradient(to right,rgb(0 0 0/.60),rgb(0 0 0/ .60)) ,url("/media/fondo.jpg");
+            background-size: cover;
+            background-position: center;
+            text-decoration: solid;
+            }
+    
+        main{
+            width: 100%;
+            align-items: center;
+            color: rgb(247, 244, 244);
+            background:linear-gradient(to right,rgb(0 0 0/.60),rgb(0 0 0/ .60)) ,url("/media/fondo.jpg");
+            background-size: cover;
+            background-position: center;
+            text-decoration: solid;
         }
-
-    main{
-        width: 100%;
-        align-items: center;
-        color: rgb(247, 244, 244);
-        background:linear-gradient(to right,rgb(0 0 0/.60),rgb(0 0 0/ .60)) ,url("/media/fondo.jpg");
-        background-size: cover;
-        background-position: center;
-        text-decoration: solid;
-    }
-
-</style>
+    
+    </style>
 
 
 

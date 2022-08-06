@@ -24,6 +24,11 @@ Detalle de Postres
 
 {% block content %}
 
+<div class="row mt-3">
+
+    <div class="col-sm-6 col-md-5"></div>
+
+        <div class="col-sm-6 col-md-2">
 
     <p> {{postre.nombre}}</p>
     <p> {{postre.descripcion}}</p>
@@ -35,5 +40,7 @@ Detalle de Postres
         <a href="{% url 'postre-inicio' %}" class="btn btn-danger mt-1" >Regresar</a>
     </p>
 
-
+        </div>
+        
+</div>
 {% endblock content %}

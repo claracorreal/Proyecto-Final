@@ -16,36 +16,96 @@ Menú Principal
 {% endblock title_menu %}
 
 
+{% block nav %}
+
+<div class="collapse navbar-collapse">
+    <ul class="navbar-nav  me-auto mb-0 mb-lg-0">
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'menu-login' %}">Empleados</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'menu-registro' %}">Registrarse</a>
+
+        </li><li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+
+    </ul>
+
+{% endblock nav %}
 
 
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
-<div class="row mt-2">
+<style>
 
-    <div class="col-sm-6 col-md-4"></div>
-        
-        <div class="col-sm-6 col-md-3">
+div.galeria{
+    align-items: flex-start;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    margin: 20px 15px;
+    float: left;
+    width: 350px;
+}
 
-        <h3> Bienvenid@ </h3><br>
 
-        <a class="btn btn-danger mt-1"  href="{% url 'bebida-inicio' %}">Bebidas</a><br>
-        <a class="btn btn-danger mt-1"  href="{% url 'entrada-inicio' %}">Entradas</a><br>
-        <a class="btn btn-danger mt-1"  href="{% url 'plato-inicio' %}">Platos</a><br>
-        <a class="btn btn-danger mt-1"  href="{% url 'postre-inicio' %}">Postres</a><br>
+ div.imagen {
 
-        <br><br><br><br>
+    text-align: center;
+ }
 
-        <p>Empleados:</p>
-        <p style="color:red"> {{mensaje}} </p>
-        <a class="btn btn-danger mt-1"  href="{% url 'menu-login' %}">Iniciar Sesión</a><br><br>
 
-        <p> ¿No tienes Cuenta? </p>
-        <a class="btn btn-danger mt-1"  href="{% url 'menu-registro' %}">Registrate!</a>
 
-        </div>
-        
-</div>   
+</style>
 
+ 
+<div class="row mt-5">
+
+<div class="galeria">
+    <div class="foto">
+        <img src="/media/bebida1.jpg" width="350" height="310">
+    </div>
+    <div class="imagen">
+        <a class="btn btn-danger mt-1"  href="{% url 'bebida-inicio' %}">Bebidas</a>
+   </div>
+</div>
+
+
+<div class="galeria">
+    <div class="foto">
+        <img src= "/media/entradas1.jpg" width="350" height="310">
+    </div>
+    <div class="imagen">
+        <a class="btn btn-danger mt-1"  href="{% url 'entrada-inicio' %}">Entradas</a>
+    </div>
+</div>      
+
+
+<div class="galeria">
+    <div class="foto">
+        <img src= "/media/plato1.jpg" width="360" height="310">
+    </div>
+    <div class="imagen">
+        <a class="btn btn-danger mt-1"  href="{% url 'plato-inicio' %}">Platos</a>
+    </div>
+</div>
+
+
+<div class="galeria">
+    <div class="foto">
+        <img src="/media/postre1.jpg" width="350" height="310">
+    </div>
+    <div class="imagen">
+        <a class="btn btn-danger mt-1"  href="{% url 'postre-inicio' %}">Postre</a>
+    </div>
+</div>
+</div>
+
+
+ 
 {% endblock content %}

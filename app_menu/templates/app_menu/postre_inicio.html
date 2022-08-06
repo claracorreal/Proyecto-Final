@@ -12,12 +12,18 @@ Bienvenido..
 
 <!-- Bloque del titulo del menu-->  
 {% block title_menu %}
-Menú Principal
+Lista de Postres
 {% endblock title_menu %}
 
 
 
 {% block content %}
+
+<div class="row mt-5">
+
+    <div class="col-sm-6 col-md-5"></div>
+        
+        <div class="col-sm-6 col-md-3">
 
     <a type="button" href="{% url 'inicio' %}" class="btn btn-danger mt-1" >Volver al inicio</a> 
     <ul>
@@ -30,4 +36,8 @@ Menú Principal
         
         {% endfor %}
     </ul>
+
+        </div>
+
+</div>
 {% endblock content %}

@@ -22,6 +22,12 @@ Detalle de Platos
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
+<div class="row mt-3">
+
+    <div class="col-sm-6 col-md-5"></div>
+
+        <div class="col-sm-6 col-md-2">
+
     <p> {{plato.nombre}}</p>
     <p> {{plato.descripcion}}</p>
     <p> ${{plato.precio}}</p>
@@ -31,4 +37,8 @@ Detalle de Platos
     <p>
         <a href="{% url 'plato-inicio' %}" class="btn btn-danger mt-1" >Regresar</a>
     </p>
+
+        </div>
+        
+</div>
 {% endblock content %}

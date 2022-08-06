@@ -14,17 +14,21 @@ from django.contrib.messages.views import SuccessMessageMixin
 class Inicio (TemplateView):
     template_name = 'app_menu/inicio.html'
 
+
 class About(TemplateView):
     template_name = 'app_menu/about.html'
 
 # se creo la view contacto para el formulario web
 
+
 def contacto (request):
+
     if request.method == "POST":
         contacto = FormularioContacto(request.POST)
         print(contacto)
 
         if contacto.is_valid:
+
             informacion = contacto.cleaned_data
             persona = Contacto( nombre = informacion ['nombre'], apellido = informacion ['apellido'],email = informacion['email'], telefono = informacion['telefono'])
             persona.save()
@@ -32,26 +36,32 @@ def contacto (request):
 
     else:
         contacto  = FormularioContacto()
+        
     return render (request, "app_menu/contacto.html", {"contacto": contacto})
+
 
 
 @login_required
 def dummy(request):
     render(request, "")
 
+
 class EntradaInicio(ListView):
     queryset = Entrada.objects.all()
     template_name = "app_menu/entrada_inicio.html"
     context_object_name = "entradas"
+
 
 class EntradaList(LoginRequiredMixin, ListView):
     queryset = Entrada.objects.all()
     template_name = "app_menu/entrada_list.html"
     context_object_name = "entradas"
 
+
 class EntradaDetail(DetailView):
     model = Entrada
     template_name = "app_menu/entrada_detail.html"
+
 
 class EntradaCreate (LoginRequiredMixin, CreateView):
     model = Entrada
@@ -59,10 +69,12 @@ class EntradaCreate (LoginRequiredMixin, CreateView):
     template_name = "app_menu/entrada_form.html"
     success_url = reverse_lazy("entrada-list") 
 
+
 class EntradaUpdate (LoginRequiredMixin, UpdateView):
     model = Entrada
     fields = ['nombre', 'descripcion', 'precio', 'imagen', 'modificacion']
     success_url = reverse_lazy("entrada-list")
+
 
 class EntradaDelete (LoginRequiredMixin, DeleteView):
     model = Entrada
@@ -74,14 +86,17 @@ class PlatoInicio(ListView):
     template_name = "app_menu/plato_inicio.html"
     context_object_name = "platos"
 
+
 class PlatoList(LoginRequiredMixin, ListView):
     queryset = Plato.objects.all()
     template_name = "app_menu/plato_list.html"
     context_object_name = "platos"
 
+
 class PlatoDetail(DetailView):
     model = Plato
     template_name = "app_menu/plato_detail.html"
+
 
 class PlatoCreate (LoginRequiredMixin, CreateView):
     model = Plato
@@ -89,10 +104,12 @@ class PlatoCreate (LoginRequiredMixin, CreateView):
     template_name = "app_menu/plato_form.html"
     success_url = reverse_lazy("plato-list") 
 
+
 class PlatoUpdate (LoginRequiredMixin, UpdateView):
     model = Plato
     fields = ['nombre', 'descripcion', 'precio', 'imagen', 'modificacion']
     success_url = reverse_lazy("plato-list")
+
 
 class PlatoDelete (LoginRequiredMixin, DeleteView):
     model = Plato
@@ -104,14 +121,17 @@ class PostreInicio(ListView):
     template_name = "app_menu/postre_inicio.html"
     context_object_name = "postres"
 
+
 class PostreList(LoginRequiredMixin, ListView):
     queryset = Postre.objects.all()
     template_name = "app_menu/postre_list.html"
     context_object_name = "postres"
 
+
 class PostreDetail(DetailView):
     model = Postre
     template_name = "app_menu/postre_detail.html"
+
 
 class PostreCreate (LoginRequiredMixin, CreateView):
     model = Postre
@@ -119,10 +139,12 @@ class PostreCreate (LoginRequiredMixin, CreateView):
     template_name = "app_menu/postre_form.html"
     success_url = reverse_lazy("postre-list") 
 
+
 class PostreUpdate (LoginRequiredMixin, UpdateView):
     model = Postre
     fields = ['nombre', 'descripcion', 'precio', 'imagen', 'modificacion']
     success_url = reverse_lazy("postre-list")
+
 
 class PostreDelete (LoginRequiredMixin, DeleteView):
     model = Postre
@@ -134,14 +156,17 @@ class BebidaInicio(ListView):
     template_name = "app_menu/bebida_inicio.html"
     context_object_name = "bebidas"
 
+
 class BebidaList(LoginRequiredMixin, ListView):
     queryset = Bebida.objects.all()
     template_name = "app_menu/bebida_list.html"
     context_object_name = "bebidas"
 
+
 class BebidaDetail(DetailView):
     model = Bebida
     template_name = "app_menu/bebida_detail.html"
+
 
 class BebidaCreate (LoginRequiredMixin, CreateView):
     model = Bebida
@@ -149,14 +174,17 @@ class BebidaCreate (LoginRequiredMixin, CreateView):
     template_name = "app_menu/bebida_form.html"
     success_url = reverse_lazy("bebida-list") 
 
+
 class BebidaUpdate (LoginRequiredMixin, UpdateView):
     model = Bebida
     fields = ['nombre', 'descripcion', 'precio', 'imagen', 'modificacion']
     success_url = reverse_lazy("bebida-list")
 
+
 class BebidaDelete (LoginRequiredMixin, DeleteView):
     model = Bebida
     success_url = reverse_lazy("bebida-list")
+
 
 
 class EdicionMenu (LoginRequiredMixin, TemplateView):
@@ -169,8 +197,10 @@ class MenuLogin(LoginView):
     next_page = reverse_lazy("edicion-menu")
 
 
+
 class MenuLogout(LogoutView):
     template_name = 'app_menu/logout.html'
+
 
 
 class SignUpView(SuccessMessageMixin, CreateView):
@@ -180,12 +210,14 @@ class SignUpView(SuccessMessageMixin, CreateView):
     success_message = "¡¡Se creo tu perfil satisfactoriamente!!"
   
 
+
 class UserProfile(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = User
     template_name = "app_menu/user_detail.html"
     
     def test_func(self):
         return self.request.user.id == int(self.kwargs['pk'])
+
 
 class UserUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
