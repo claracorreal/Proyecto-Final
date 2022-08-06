@@ -24,7 +24,9 @@ class About(TemplateView):
 def contacto (request):
 
     if request.method == "POST":
+
         contacto = FormularioContacto(request.POST)
+        
         print(contacto)
 
         if contacto.is_valid:
