@@ -19,7 +19,7 @@ class About(TemplateView):
 
 # se creo la view contacto para el formulario web
 
-def Contacto (request):
+def contacto (request):
     if request.method == "POST":
         contacto = FormularioContacto(request.POST)
         print(contacto)
