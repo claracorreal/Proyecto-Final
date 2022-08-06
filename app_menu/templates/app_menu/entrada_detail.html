@@ -28,9 +28,13 @@ Detalle de Entradas
     <p> {{entrada.nombre}}</p>
     <p> {{entrada.descripcion}}</p>
     <p> ${{entrada.precio}}</p>
+
     <div style="text-align:left;">
+
         <img height="225" src="{{ entrada.imagen.url }}" /> 
+
     </div>
+    
     <p>
         <a href="{% url 'entrada-inicio' %}" class="btn btn-danger mt-1" >Regresar</a>
     </p>
