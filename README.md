@@ -20,17 +20,21 @@ Este proyecto ha sido creado con Python 3.9.12, por lo que para su correcto func
 
 Verficar la versión en su ordenador ( Windows 10/11):
 
-´´´
+```
 
->Python --version
->Python 3.9.12
+Python --version
+Python 3.9.12
 
-´´´
+```
 
 En ventanas:
 
->c:\> py --version
->c:\> Python 3.9.12
+```
+
+c:\> py --version
+c:\> Python 3.9.12
+
+```
 
 
 
