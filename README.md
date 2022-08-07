@@ -19,9 +19,11 @@ Para poder instalar esta aplicación en tu computadora necesitas lo siguiente:
 ##Este proyecto ha sido creado con Python 3.9.12, por lo que para su correcto funcionamiento recomendamos igual versión o superior para no tener problemas en las compatibilidades
 
 ##Verficar la versión en su ordenador ( Windows 10/11):
-
+'''
 >Python --version
 >Python 3.9.12
+
+'''
 
 
 
