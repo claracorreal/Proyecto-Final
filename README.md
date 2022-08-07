@@ -11,10 +11,14 @@ Este proyecto tiene como objetivo crear un sistema para la administración de Be
 - Añade una imagen para cada artículo.
 
 
+
+
+
+
 # Instalación
 
 
-## Para poder instalar esta aplicación en tu computadora necesitas lo siguiente:
+Para poder instalar esta aplicación en tu computadora necesitas lo siguiente:
 
 
 
@@ -36,6 +40,9 @@ c:\> py --version
 c:\> Python 3.9.12
 ```
 
+
+
+
 # Instalar dependencias
 
 >Para instalar las dependencias, debe ejecutar **pip install**, asegúrese de estar en la carpeta del proyecto y pueda ver el **requirements.txt** archivo cuando haga **ls** o **dir**:
@@ -51,6 +58,9 @@ Configuración de la aplicación Django
 >Una vez que termine la instalación de las dependencias, debe ejecutar algunos comandos Django:
 
 
+
+
+
 # Migraciones
 
 ```
@@ -62,6 +72,8 @@ En ventanas:
 ```
 c:\> py mananage.py migrate
 ```
+
+
 
 # Ejecutar el servidor
 
@@ -84,10 +96,4 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 ```
 
-Luego de estos comandos, y una vez posicionado en la web, deberia poder correr el proyecto sin ningun problema
-
-
-Usuarios de GitHub :
-@github/claracorreal
-@github/Chonig
-@github/cristiantorales27
+Luego de estos comandos, y una vez posicionado en la web, deberia poder correr el proyecto sin ningun problema.
