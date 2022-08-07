@@ -6,9 +6,9 @@
 
 Este proyecto tiene como objetivo crear un sistema para la administración de Bebidas, Entradas, Platos y Postres. Al loguearte como empleados podrás:
 
-- Crear, leer, actualizar y eliminar Usuarios.
+- Crear, leer y actualizar Usuarios.
 - Crear, leer, actualizar y eliminar artículos.
-- Añade una imagen para cada artículo.
+- Añadir una imagen para cada artículo.
 
 
 
