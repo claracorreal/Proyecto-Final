@@ -31,9 +31,13 @@ Detalle de Platos
     <p> {{plato.nombre}}</p>
     <p> {{plato.descripcion}}</p>
     <p> ${{plato.precio}}</p>
+
     <div style="text-align:left;">
+
         <img height="225" src="{{ plato.imagen.url }}" /> 
+        
     </div>
+
     <p>
         <a href="{% url 'plato-inicio' %}" class="btn btn-danger mt-1" >Regresar</a>
     </p>

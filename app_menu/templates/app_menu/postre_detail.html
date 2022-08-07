@@ -33,9 +33,13 @@ Detalle de Postres
     <p> {{postre.nombre}}</p>
     <p> {{postre.descripcion}}</p>
     <p> ${{postre.precio}}</p>
+
     <div style="text-align:left;">
+
         <img height="225" src="{{ postre.imagen.url }}" /> 
+
     </div>
+    
     <p>
         <a href="{% url 'postre-inicio' %}" class="btn btn-danger mt-1" >Regresar</a>
     </p>

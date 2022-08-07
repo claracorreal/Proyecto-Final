@@ -21,9 +21,13 @@ Confirmación Delete
 {% block content %}
 
 
-        <div class="container">
+<div class="row mt-5">
 
-            <a type="button" href = "{% url 'bebida-list' %}" style="margin-top: 1em;" class="btn btn-danger mt-1" >Lista de bebidas</a>
+    <div class="col-sm-6 col-md-4"></div>
+        
+        <div class="col-sm-6 col-md-4">
+
+            <a type="button" href = "{% url 'bebida-list' %}" class="btn btn-danger mt-1" >Lista de bebidas</a>
 
             <form method="post">
 
@@ -38,6 +42,9 @@ Confirmación Delete
             </form>
             
         </div>
+
+</div>
+
 
 
 {% endblock content %}

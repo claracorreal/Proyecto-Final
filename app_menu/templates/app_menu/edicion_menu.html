@@ -33,11 +33,18 @@ div.galeria{
 </style>
 
 {{mensaje}}
+
+
+
+<div class=" text-center mt-1">
+<a type="button" href="{% url 'menu-logout' %}" class="btn btn-danger mt-1">Log out</a> 
+<a type="button" href="{% url 'user-detail' user.id %}" class="btn btn-success mt-1">Editar perfil</a><br>
+</div>
+
 <div class="row mt-5">
 
 
-<a type="button" href="{% url 'menu-logout' %}" class="btn btn-sm btn-outline-danger mt-1">Log out</a> 
-<a type="button" href="{% url 'user-detail' user.id %}" class="btn btn-sm btn-outline-success">Editar perfil</a><br>
+
 
 
 
