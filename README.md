@@ -4,7 +4,7 @@
 [Carpeta Test/Video](https://drive.google.com/drive/folders/1eltTw5lLZWq-fCU1LgbZesDS-CX8GHEU?usp=sharing)
 [Documentación Django](https://docs.djangoproject.com/)
 
-## Este proyecto tiene como objetivo crear un sistema para la administración de Bebidas, Entradas, Platos y Postres. Al loguearte como empleados podrás:
+Este proyecto tiene como objetivo crear un sistema para la administración de Bebidas, Entradas, Platos y Postres. Al loguearte como empleados podrás:
 
 - Crear, leer, actualizar y eliminar Usuarios.
 - Crear, leer, actualizar y eliminar artículos.
