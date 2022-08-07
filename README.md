@@ -10,11 +10,14 @@ Este proyecto tiene como objetivo crear un sistema para la administración de Be
 - Crear, leer, actualizar y eliminar artículos.
 - Añade una imagen para cada artículo.
 
-# Instalación:
+
+# Instalación
+
 
 Para poder instalar esta aplicación en tu computadora necesitas lo siguiente:
 
-# Comprobar versión de Djnago:
+
+# Comprobar versión de Djnago
 
 Este proyecto ha sido creado con Python 3.9.12, por lo que para su correcto funcionamiento recomendamos igual versión o superior para no tener problemas en las compatibilidades
 
@@ -36,20 +39,69 @@ c:\> Python 3.9.12
 
 ```
 
+# Instalar dependencias
+
+Para instalar las dependencias, debe ejecutar **pip install**, asegúrese de estar en la carpeta del proyecto y pueda ver el **requirements.txt** archivo cuando haga **ls** o **dir**:
+
+```
+
+pip install -r requirements.txt
+
+```
+
+*Luego de correr este bloque de código, comenzará una instalación que durará un breve tiempo*
+
+# Configuración de la aplicación Django
+
+Una vez que termine la instalación de las dependencias, debe ejecutar algunos comandos Django:
 
 
+# Migraciones
+```
+
+python mananage.py migrate
+
+```
+
+En ventanas:
+
+```
+
+c:\> py mananage.py migrate
+
+```
+
+# Ejecutar el servidor
 
 
+```
+
+python mananage.py runserver
+
+```
+
+En ventanas:
+
+```
+
+c:\> py mananage.py runserver
+
+```
+
+En la terminal de bash, si todo esta bien instalado, le dara la posibilidad de abrir el LocalHost, deberia verse de esta forma:
 
 
+```
+
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+```
+
+Luego de estos comandos, y una vez posicionado en la web, deberia poder correr el proyecto sin ningun problema
 
 
-
-
-
-
-
-- Estos son nuestros usuarios de GitHub 
-@claracorreal
-@Chonig
-@cristiantorales27
+Usuarios de GitHub :
+@github/claracorreal
+@github/Chonig
+@github/cristiantorales27
