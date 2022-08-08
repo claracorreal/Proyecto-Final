@@ -65,49 +65,48 @@ div.galeria{
 
 </style>
 
- 
 <div class="row mt-5">
 
-<div class="galeria">
-    <div class="foto">
-        <img src="/media/bebida1.jpg" width="350" height="310">
+    <div class="galeria">
+        <div class="foto">
+            <img src="/media/bebida1.jpg" width="350" height="310">
+        </div>
+        <div class="imagen">
+            <a class="btn btn-danger mt-1"  href="{% url 'bebida-inicio' %}">Bebidas</a>
+       </div>
     </div>
-    <div class="imagen">
-        <a class="btn btn-danger mt-1"  href="{% url 'bebida-inicio' %}">Bebidas</a>
-   </div>
-</div>
-
-
-<div class="galeria">
-    <div class="foto">
-        <img src= "/media/entradas1.jpg" width="350" height="310">
+    
+    
+    <div class="galeria">
+        <div class="foto">
+            <img src= "/media/entradas1.jpg" width="350" height="310">
+        </div>
+        <div class="imagen">
+            <a class="btn btn-danger mt-1"  href="{% url 'entrada-inicio' %}">Entradas</a>
+        </div>
+    </div>      
+    
+    
+    <div class="galeria">
+        <div class="foto">
+            <img src= "/media/plato1.jpg" width="360" height="310">
+        </div>
+        <div class="imagen">
+            <a class="btn btn-danger mt-1"  href="{% url 'plato-inicio' %}">Platos</a>
+        </div>
     </div>
-    <div class="imagen">
-        <a class="btn btn-danger mt-1"  href="{% url 'entrada-inicio' %}">Entradas</a>
+    
+    
+    <div class="galeria">
+        <div class="foto">
+            <img src="/media/postre1.jpg" width="350" height="310">
+        </div>
+        <div class="imagen">
+            <a class="btn btn-danger mt-1"  href="{% url 'postre-inicio' %}">Postre</a>
+        </div>
     </div>
-</div>      
-
-
-<div class="galeria">
-    <div class="foto">
-        <img src= "/media/plato1.jpg" width="360" height="310">
     </div>
-    <div class="imagen">
-        <a class="btn btn-danger mt-1"  href="{% url 'plato-inicio' %}">Platos</a>
-    </div>
-</div>
-
-
-<div class="galeria">
-    <div class="foto">
-        <img src="/media/postre1.jpg" width="350" height="310">
-    </div>
-    <div class="imagen">
-        <a class="btn btn-danger mt-1"  href="{% url 'postre-inicio' %}">Postre</a>
-    </div>
-</div>
-</div>
-
+    
 
  
 {% endblock content %}

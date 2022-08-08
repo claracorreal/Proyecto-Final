@@ -1,0 +1,56 @@
+{% extends 'app_menu/base.html' %}
+
+
+
+
+<!--Bloque de la Pestaña de la Página-->
+{% block title %}
+Productos
+{% endblock title %}
+
+
+
+<!-- Bloque del titulo del menu-->  
+{% block title_menu %}
+Lista de Productos
+{% endblock title_menu %}
+
+
+
+<!--Bloque de Contenido de la página-->
+{% block content %}
+<div class=" text-center mt-1">
+    <a type="button" href="{% url 'menu-logout' %}" class="btn btn-danger mt-1">Log out</a> 
+    <a type="button" href="{% url 'user-detail' user.id %}" class="btn btn-success mt-1">Editar perfil</a><br>
+    </div>
+
+
+<div class="row mt-5">
+
+    <div class="col-sm-6 col-md-4"></div>
+        
+        <div class="col-sm-6 col-md-4">
+
+    <a type="button" href="{% url 'producto-create' %}" class="btn btn-danger mt-1" >Nuevo producto</a> 
+
+    
+    <ul>
+        {% for producto in productos %}
+
+            <li>
+                <p> {{producto.tipo}}: {{producto.nombre}} -- ${{producto.precio}}</p>
+                <p>
+                    <a href="{% url 'producto-detail' producto.id %}" class="btn btn-danger mt-1" > Ver</a>
+                    <a href="{% url 'producto-update' producto.id %}" class="btn btn-danger mt-1" > Editar</a>
+                    <a href="{% url 'producto-delete' producto.id %}" class="btn btn-danger mt-1" > Borrar</a><br>
+                </p>
+            </li>
+        
+        {% endfor %}
+    </ul>
+    
+        </div>
+        
+</div>
+
+{% endblock content %}
