@@ -5,18 +5,15 @@
 
 <!--Bloque de la Pestaña de la Página-->
 {% block title %}
-Platos
+Productos
 {% endblock title %}
-
 
 
 
 <!-- Bloque del titulo del menu-->  
 {% block title_menu %}
-Detalle de Platos
+Detalle de Productos
 {% endblock title_menu %}
-
-
 
 
 <!--Bloque de Contenido de la página-->
@@ -24,22 +21,24 @@ Detalle de Platos
 
 <div class="row mt-3">
 
-    <div class="col-sm-6 col-md-5"></div>
+    <div class="col-sm-6 col-md-4"></div>
 
-        <div class="col-sm-6 col-md-2">
+        <div class="col-sm-6 col-md-3">
 
-    <p> {{plato.nombre}}</p>
-    <p> {{plato.descripcion}}</p>
-    <p> ${{plato.precio}}</p>
+    <p> Producto: {{producto.nombre}}</p>
+    <p> Descripción: {{producto.descripcion}}</p>
+    <p> Precio: ${{producto.precio}}</p>
+    <p> Última modificación: {{producto.modificacion}}</p>
 
     <div style="text-align:left;">
 
-        <img height="225" src="{{ plato.imagen.url }}" /> 
-        
+        <img height="225" src="{{ producto.imagen.url }}" /> 
+
     </div>
 
+    
     <p>
-        <a href="{% url 'plato-inicio' %}" class="btn btn-danger mt-1" >Regresar</a>
+        <a href="{% url 'producto-list' %}" class="btn btn-danger mt-1" >Regresar</a>
     </p>
 
         </div>

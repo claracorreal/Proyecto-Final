@@ -1,41 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Entrada(models.Model):
-    nombre = models.CharField(max_length=100)
-    descripcion = models.CharField(max_length=400)
-    precio = models.FloatField()
-    imagen = models.ImageField(upload_to="entradas", null=True, blank=True)
-    modificacion = models.DateField()
-
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=40)
+    
     def __str__(self):
-        return f"{self.nombre}: ${self.precio}"
+        return f"{self.nombre}"
 
-class Plato(models.Model):
+class Producto(models.Model):
+    tipo = models.ForeignKey(Categoria, blank=True, null=True, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=400)
     precio = models.FloatField()
-    imagen = models.ImageField(upload_to="platos", null=True, blank=True)
-    modificacion = models.DateField()
-
-    def __str__(self):
-        return f"{self.nombre}: ${self.precio}"
-
-class Postre(models.Model):
-    nombre = models.CharField(max_length=100)
-    descripcion = models.CharField(max_length=400)
-    precio = models.FloatField()
-    imagen = models.ImageField(upload_to="postres", null=True, blank=True)
-    modificacion = models.DateField()
-
-    def __str__(self):
-        return f"{self.nombre}: ${self.precio}"
-
-class Bebida(models.Model):
-    nombre = models.CharField(max_length=100)
-    descripcion = models.CharField(max_length=400)
-    precio = models.FloatField()
-    imagen = models.ImageField(upload_to="bebidas", null=True, blank=True)
+    imagen = models.ImageField(upload_to="productos", null=True, blank=True)
     modificacion = models.DateField()
 
     def __str__(self):

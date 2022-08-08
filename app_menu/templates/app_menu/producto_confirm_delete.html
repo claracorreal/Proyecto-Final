@@ -1,10 +1,11 @@
 {% extends 'app_menu/base.html' %}
+<!-- Esto es solo para probar, después sacalo o cambialo-->
 
 
 
 <!--Bloque de la Pestaña de la Página-->
 {% block title %}
-Bebidas
+Producto
 {% endblock title %}
 
 
@@ -20,31 +21,30 @@ Confirmación Delete
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
-
 <div class="row mt-5">
 
     <div class="col-sm-6 col-md-4"></div>
         
         <div class="col-sm-6 col-md-4">
+        
 
-            <a type="button" href = "{% url 'bebida-list' %}" class="btn btn-danger mt-1" >Lista de bebidas</a>
+            <a type="button" href = "{% url 'producto-list' %}"class="btn btn-danger mt-1" >Lista de productos</a>
 
             <form method="post">
 
                 {% csrf_token %}
 
-                <p>¿Está seguro que desea borrar "{{bebida.nombre}}"?</p>
+                <p>¿Está seguro que desea borrar "{{producto.nombre}}"?</p>
 
                 {{ form }}
 
                 <input type="submit" class="btn btn-danger mt-1" value="Confirmar">
 
             </form>
-            
+
         </div>
-
+        
 </div>
-
 
 
 {% endblock content %}

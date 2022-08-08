@@ -1,20 +1,19 @@
 {% extends 'app_menu/base.html' %}
-<!-- Esto es solo para probar, después sacalo o cambialo-->
+
+
 
 
 <!--Bloque de la Pestaña de la Página-->
 {% block title %}
-Platos
+Entradas
 {% endblock title %}
-
 
 
 
 <!-- Bloque del titulo del menu-->  
 {% block title_menu %}
-Lista de Platos
+Lista de Entradas
 {% endblock title_menu %}
-
 
 
 
@@ -23,19 +22,25 @@ Lista de Platos
 
 <div class="row mt-5">
 
-    <div class="col-sm-6 col-md-5"></div>
+    <div class="col-sm-6 col-md-4"></div>
         
         <div class="col-sm-6 col-md-3">
 
     <a type="button" href="{% url 'inicio' %}" class="btn btn-danger mt-1" >Volver al inicio</a> 
-
-
+    
     <ul>
-        {% for plato in platos %}
+        {% for producto in productos %}
 
-            <li>
-                <p> {{plato.nombre}}: ${{plato.precio}}</p>
-                    <a href="{% url 'plato-detail' plato.id %}" class="btn btn-danger mt-1"> Ver</a>
+        <li>
+            <p> {{producto.nombre}} ({{producto.descripcion}}) --> ${{producto.precio}}</p>
+        
+            <div style="text-align:left;">
+        
+                <img height="225" src="{{ producto.imagen.url }}" /> 
+        
+            </div>
+            <br>
+
             </li>
         
         {% endfor %}
@@ -44,4 +49,5 @@ Lista de Platos
         </div>
         
 </div>
+
 {% endblock content %}

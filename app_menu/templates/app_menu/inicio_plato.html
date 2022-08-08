@@ -5,14 +5,14 @@
 
 <!--Bloque de la Pestaña de la Página-->
 {% block title %}
-Entradas
+Platos
 {% endblock title %}
 
 
 
 <!-- Bloque del titulo del menu-->  
 {% block title_menu %}
-Lista de Entradas
+Lista de Platos
 {% endblock title_menu %}
 
 
@@ -22,20 +22,26 @@ Lista de Entradas
 
 <div class="row mt-5">
 
-    <div class="col-sm-6 col-md-5"></div>
+    <div class="col-sm-6 col-md-4"></div>
         
         <div class="col-sm-6 col-md-3">
 
     <a type="button" href="{% url 'inicio' %}" class="btn btn-danger mt-1" >Volver al inicio</a> 
     
     <ul>
-        {% for entrada in entradas %}
+        {% for producto in productos %}
 
-            <li>
-                <p> {{entrada.nombre}}: ${{entrada.precio}}</p>
-                    <a href="{% url 'entrada-detail' entrada.id %}" class="btn btn-danger mt-1" > Ver</a>
-            </li>
+        <li>
+            <p> {{producto.nombre}} ({{producto.descripcion}}) --> ${{producto.precio}}</p>
         
+            <div style="text-align:left;">
+        
+                <img height="225" src="{{ producto.imagen.url }}" /> 
+        
+            </div>
+            <br>
+
+            </li>
         {% endfor %}
     </ul>
 
