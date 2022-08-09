@@ -73,7 +73,14 @@ En ventanas:
 c:\> py mananage.py migrate
 ```
 
+# Proceso de Carga de las catergorias del menú
 
+Para poder cargar de manera manual en el */Admin* deberá seguir el siguiente orden de referencia:
+
+>1= **Entrada** 
+>2= **Plato**
+>3= **Postre**
+>4= **Bebida**
 
 # Ejecutar el servidor
 

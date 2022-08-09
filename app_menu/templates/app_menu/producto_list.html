@@ -19,38 +19,57 @@ Lista de Productos
 
 <!--Bloque de Contenido de la página-->
 {% block content %}
+
+<style>
+
+div.lista ul{
+
+    text-decoration: double;
+    text-align: center;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    
+
+}
+
+
+</style>
+
 <div class=" text-center mt-1">
     <a type="button" href="{% url 'menu-logout' %}" class="btn btn-danger mt-1">Log out</a> 
     <a type="button" href="{% url 'user-detail' user.id %}" class="btn btn-success mt-1">Editar perfil</a><br>
-    </div>
-
-
-<div class="row mt-5">
-
-    <div class="col-sm-6 col-md-4"></div>
-        
-        <div class="col-sm-6 col-md-4">
-
-    <a type="button" href="{% url 'producto-create' %}" class="btn btn-danger mt-1" >Nuevo producto</a> 
-
-    
-    <ul>
-        {% for producto in productos %}
-
-            <li>
-                <p> {{producto.tipo}}: {{producto.nombre}} -- ${{producto.precio}}</p>
-                <p>
-                    <a href="{% url 'producto-detail' producto.id %}" class="btn btn-danger mt-1" > Ver</a>
-                    <a href="{% url 'producto-update' producto.id %}" class="btn btn-danger mt-1" > Editar</a>
-                    <a href="{% url 'producto-delete' producto.id %}" class="btn btn-danger mt-1" > Borrar</a><br>
-                </p>
-            </li>
-        
-        {% endfor %}
-    </ul>
-    
-        </div>
-        
 </div>
 
+
+
+
+    
+
+    
+    
+        {% for producto in productos %}
+
+<div class="lista">
+
+            <ul>
+
+                <h4>
+               {{producto.tipo}}: {{producto.nombre}} -- ${{producto.precio}}
+                
+                   
+                <a href="{% url 'producto-detail' producto.id %}" class="btn btn-danger mt-1" > Ver</a>
+                <a href="{% url 'producto-update' producto.id %}" class="btn btn-danger mt-1" > Editar</a>
+                <a href="{% url 'producto-delete' producto.id %}" class="btn btn-danger mt-1" > Borrar</a>
+                </h4>
+
+            </ul>
+        
+        {% endfor %}
+       
+        
+</div>  
+    
+    
+<div class=" text-center mt-1">
+    <a type="button" href="{% url 'producto-create' %}" class="btn btn-danger mt-1" >Nuevo producto</a> 
+</div>
 {% endblock content %}

@@ -91,22 +91,22 @@ class UserUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class EntradaInicio(ListView):
-    queryset = Producto.objects.all().filter(tipo=1)  # 1 = entrada
+    queryset = Producto.objects.filter(tipo=1)  # 1 = entrada
     template_name = "app_menu/inicio_entrada.html"
     context_object_name = "productos"
 
 class PlatoInicio(ListView):
-    queryset = Producto.objects.all().filter(tipo=2)   # 2 = plato
+    queryset = Producto.objects.filter(tipo=2)   # 2 = plato
     template_name = "app_menu/inicio_plato.html"
     context_object_name = "productos"
 
 class PostreInicio(ListView):
-    queryset = Producto.objects.all().filter(tipo=3)   # 3 = postre
+    queryset = Producto.objects.filter(tipo=3)   # 3 = postre
     template_name = "app_menu/inicio_postre.html"
     context_object_name = "productos"
 
 class BebidaInicio(ListView):
-    queryset = Producto.objects.all().filter(tipo=4)   # 4 = bebida
+    queryset = Producto.objects.filter(tipo=4)   # 4 = bebida
     template_name = "app_menu/inicio_bebida.html"
     context_object_name = "productos"
 
