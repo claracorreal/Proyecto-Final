@@ -20,13 +20,13 @@ Lista de Platos
 <!--Bloque de Contenido de la página-->
 {% block content %}
 
-<div class="row mt-5">
+<div class="row mt-4">
 
-    <div class="col-sm-6 col-md-4"></div>
+    <div class="col-sm-6 col-md-5"></div>
         
         <div class="col-sm-6 col-md-3">
 
-    <a type="button" href="{% url 'inicio' %}" class="btn btn-danger mt-1" >Volver al inicio</a> 
+    
     
     <ul>
         {% for producto in productos %}
@@ -45,6 +45,8 @@ Lista de Platos
         {% endfor %}
     </ul>
 
+    <a type="button" href="{% url 'inicio' %}" class="btn btn-danger mt-1" >Volver al inicio</a> 
+    
         </div>
         
 </div>
